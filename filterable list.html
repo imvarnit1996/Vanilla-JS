@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<title>My contacts</title>
+</head>
+<body>
+	<div class="container">
+		<h1 class="center-align">
+			My contacts
+		</h1>
+
+		<input type="text" id="filterinput" placeholder="search names..." >
+			<ul class="collection with-header">
+				<li class="collection-header">
+					A
+				</li>
+				<li class="collection-item">
+					<a href="#" >Aditya</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Anaya</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Akanksha</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Advik</a>
+				</li>
+
+
+				<li class="collection-header">
+					B
+				</li>
+				<li class="collection-item">
+					<a href="#" >Ben</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Baman</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Benafsha</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Beera</a>
+				</li>
+
+
+				<li class="collection-header">
+					N
+				</li>
+				<li class="collection-item">
+					<a href="#" >Naman</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Naisaar</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Naina</a>
+				</li>
+
+				<li class="collection-item">
+					<a href="#" >Nonu</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<script type="text/javascript">
+//input element
+	let filterinput=document.getElementById('filterinput');
+	//Add event listener
+	filterinput.addEventListener('keyup', filterNames);
+	function filterNames(){
+  //get value of input
+		let filterValue=document.getElementById('filterinput').value.toUpperCase();
+		//get names ul
+		let ul=document.getElementById('names');
+		//get names li
+		let li=ul.querySelectorAll('li.collection-item');
+		//loop through all collection item
+		for (let i = 0; i < li.length; i++) {
+		let a = li[i].getElementByTagName('a')[0];
+		//if matched
+		if (a.innerHTML.toUpperCase().indexOf(filterValue)> -1){
+			li[i].style.display='';
+		}
+			else {
+				li[i].style.display='none';
+			}
+		}
+	}
+</script>
+</body>
+</html>
